@@ -3,4 +3,11 @@ find_package(Zephyr REQUIRED HINTS $ENV{ZEPHYR_BASE})
 
 project(beacon)
 
-target_sources(app PRIVATE src/main.c)
+target_sources(app PRIVATE
+    src/main.c
+    src/sensors.c
+    src/advertiser.c
+    src/led.c
+)
+
+target_include_directories(app PRIVATE include)
